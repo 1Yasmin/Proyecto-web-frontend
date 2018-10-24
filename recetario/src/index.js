@@ -8,10 +8,10 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 
-import recipeReducer from './reducers';
+import reducer from './reducers';
 
 
-const store = createStore(recipeReducer);
+const store = createStore(reducer);
 const app = 
   <Provider store={store}>
   <BrowserRouter>

@@ -1,19 +1,20 @@
-import * as types from '../types';
+import { combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form';
+import users, * as fromUsers from './users';
+import recipes, * as fromRecipes from './recipes';
 
-const recipeReducer = (state={},action)=>{
-  switch(action.type){
-    case types.ADD_RECIPE:
-      return [...state, action.payload]
-      
-    
-    case types.DELETE_RECIPE:{
-      const newState = {...state};
-      delete newState[action.id];
-      return newState;
-    }
-    default:
-      return state;
-  }
-}
+const reducer = combineReducers({
+  users,
+  recipes,
+  form: formReducer,
+});
 
-export default recipeReducer;
+export default reducer;
+
+export const getUser = (state, id) =>
+  fromUsers.getUser(state.users, id);
+export const getUserIds = (state) => fromUsers.getUserIds(
+  state.users,
+);
+export const getUsers = (state) =>
+  fromUsers.getUsers(state.users);
