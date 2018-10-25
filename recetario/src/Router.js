@@ -1,11 +1,15 @@
 import React from 'react';
-import {Switch,Route} from 'react-router-dom';
-import HomePage from './pages/homepage';
+import {Switch,Route,Redirect} from 'react-router-dom';
+import LoginPage from './pages/loginpage';
 import FavoritesPage from './pages/favoritespage';
+import HomePage from './pages/homepage';
+import SigninPage from './pages/signuppage';
 const Router = () => (
   <Switch>
-  <Route exact path='/' component={HomePage} />
+  <Route exact path='/' component={LoginPage} />
   <Route exact path='/favoritos' component={FavoritesPage} />
+  <Route exact path='/home' component={HomePage} />
+  <Route exact path='/signup' component={SigninPage} />
   </Switch>
 );
 
