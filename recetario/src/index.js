@@ -6,12 +6,8 @@ import * as serviceWorker from './serviceWorker';
 import { createStore } from 'redux';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import store from './configstore/store';
 
-
-import reducer from './reducers';
-
-
-const store = createStore(reducer);
 const app = 
   <Provider store={store}>
   <BrowserRouter>

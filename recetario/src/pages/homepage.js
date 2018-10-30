@@ -1,4 +1,5 @@
 import React from 'react';
+import App from '../components/App';
 
 import {NavLink} from 'react-router-dom';
 const Navigation = (props)=> <nav>
@@ -16,6 +17,7 @@ const Navigation = (props)=> <nav>
 export default function Homepage(props){
   return <div>
     <h2>Home</h2>
+    <App />
     <Navigation />
     </div>
 }
