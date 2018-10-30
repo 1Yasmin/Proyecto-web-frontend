@@ -2,10 +2,14 @@ import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import users, * as fromUsers from './users';
 import recipes, * as fromRecipes from './recipes';
+import { token, decoded, error } from './login';
 
 const Rootreducer = combineReducers({
   users,
   recipes,
+  token,
+  decoded,
+  error,
   form: formReducer,
 });
 
