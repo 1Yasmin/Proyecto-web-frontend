@@ -13,6 +13,7 @@
     "react-scripts": "2.0.5",
     "redux": "^4.0.1",
     "redux-form": "^7.4.2",
+    "redux-saga": "^0.16.2",
     "uuid-v4": "^0.1.0"
   },
   "scripts": {
