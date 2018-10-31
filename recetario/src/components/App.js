@@ -6,6 +6,7 @@ import * as actionCreators from '../actions/actionCreators';
 
 import RecetaList from './RecetaList';
 
+
 function mapStateToProps(state){
   return{
     recetas: state.recetas
