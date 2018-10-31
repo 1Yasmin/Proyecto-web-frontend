@@ -3,13 +3,15 @@ import { connect } from 'react-redux';
 import * as selectors from '../../reducers';
 import * as actions from '../../actions/actionCreators';
 
-const User = ({ firstName, lastName, username, email, isConfirmed, onDelete }) => (
+const User = ({ firstName, lastName, username, email, isConfirmed, password, onDelete }) => (
   <li>
     { firstName }
     { '-' }
     { lastName }
     { '-' }
     { username }
+    { '-' }
+    { password}
     { '-' }
     <a href={`mailto:${email}`}>
       { email }

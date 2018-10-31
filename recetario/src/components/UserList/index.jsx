@@ -7,15 +7,10 @@ import User from '../User';
 
 
 const UserList = ({ userIds }) => (
-  userIds.length > 0 ? (
     <ul>
       { userIds.map(id => <User key={id} id={id} />) }
     </ul>
-  ) : (
-    <div className="noUsers">
-      { 'No hay usuarios!' }
-    </div>
-  )
+   
 );
 
 

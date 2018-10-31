@@ -20,30 +20,13 @@ const renderInput = ({ input, meta, ...props }) => (
   </div>
 );
 
-const UserForm = ({ handleSubmit }) => (
-  <form onSubmit={handleSubmit}>
-    <Field
-      type="text"
-      name="firstName"
-      placeholder="Name:"
-      component={renderInput}
-    />
-    <Field
-      type="text"
-      name="lastName"
-      placeholder="Last name:"
-      component={renderInput}
-    />
+//cambiar a onSubmit en vez de action cuando se tenga verificacion
+const LoginForm = ({ handleSubmit }) => (
+  <form action="http://localhost:3000/home">
     <Field
       type="text"
       name="username"
       placeholder="Username:"
-      component={renderInput}
-    />
-    <Field
-      type="email"
-      name="email"
-      placeholder="Email:"
       component={renderInput}
     />
     <Field
@@ -52,22 +35,19 @@ const UserForm = ({ handleSubmit }) => (
       placeholder="Password:"
       component={renderInput}
     />
-    <button type="submit">
-      Agregar!
+    <button type="submit" >
+      Login
     </button>
   </form>
 );
 
 
 export default reduxForm({
-  form: 'createUserForm',
+  form: 'loginUserForm',
   onSubmit(values, dispatch) {
     console.log(uuid())
     dispatch(actions.addUser(
       uuid(),
-      values.firstName,
-      values.lastName,
-      values.email,
       values.username,
       values.password,
     ));
@@ -75,16 +55,11 @@ export default reduxForm({
   validate(values) {
     const errors = {};
     if(!values.password){
-      errors.password = "Password is required!";
+      errors.password = "Incorrect password";
     }
-    if (!values.email) {
-      errors.email = "Email is required!";
-    } else {
-      if (!validator.validate(values.email)) {
-        errors.email = "Email is invalid!";
-      }
-    }
-
+    if (!values.username) {
+      errors.username = "Incorrect username";
+    } 
     return errors;
   }
-})(UserForm);
+})(LoginForm);
