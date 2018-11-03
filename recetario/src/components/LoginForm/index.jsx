@@ -3,6 +3,7 @@ import validator from 'email-validator';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
+import './loginForm.css'
 
 import * as actions from '../../actions/actionCreators';
 
@@ -22,7 +23,7 @@ const renderInput = ({ input, meta, ...props }) => (
 
 //cambiar a onSubmit en vez de action cuando se tenga verificacion
 const LoginForm = ({ handleSubmit }) => (
-  <form action="http://localhost:3000/home">
+  <form className="btnHome" action="http://localhost:3000/home">
     <Field
       type="text"
       name="username"

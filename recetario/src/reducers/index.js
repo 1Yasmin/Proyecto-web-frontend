@@ -3,6 +3,7 @@ import { reducer as formReducer } from 'redux-form';
 import users, * as fromUsers from './users';
 import recipes, * as fromRecipes from './recipes';
 import { token, decoded, error } from './login';
+import { routerReducer } from 'react-router-redux'
 
 const Rootreducer = combineReducers({
   users,
