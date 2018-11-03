@@ -63,7 +63,7 @@ export default reduxForm({
   form: 'createUserForm',
   onSubmit(values, dispatch) {
     console.log(uuid())
-    dispatch(actions.addUser(
+    dispatch(actions.register(
       uuid(),
       values.firstName,
       values.lastName,

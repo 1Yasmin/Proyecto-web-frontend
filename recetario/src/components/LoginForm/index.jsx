@@ -1,7 +1,5 @@
 import uuid from 'uuid-v4';
-import validator from 'email-validator';
 import React from 'react';
-import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import './loginForm.css'
 

@@ -1,6 +1,4 @@
 import * as types from '../types';
-import isPromise from 'is-promise';
-import jwt_decode from 'jwt-decode';
 
 //acciones de usuario
 export const addUser = (id, firstName, lastName, email, username) => ({
@@ -40,45 +38,129 @@ export const deleteRecipe = id =>({
 });
 
 //acciones de login
-export const logout = (extra = {}) => ({
-  type: types.LOGOUT,
-  payload: { ...extra }
-});
+export const loadUser = () => {
+    return (dispatch, getState) => {
+        dispatch({type: "USER_LOADING"});
 
-export const startLogin = (username, password, extra = {}) => ({
-  type: types.LOGIN_STARTED,
-  payload: { username, password, ...extra }
-});
+        const token = getState().auth.token;
 
-export const completeLogin = (token, decoded, extra = {}) => ({
-  type: types.LOGIN_SUCCEED,
-  payload: { token, decoded, ...extra }
-});
+        let headers = {
+            "Content-Type": "application/json",
+        };
 
-export const failLogin = payload => ({
-  type: types.LOGIN_FAILED,
-  payload
-});
-
-export const login = apiLogin =>
-  (username, password) =>
-    dispatch => {
-      dispatch(startLogin(username));
-
-      return apiLogin(username, password).then(
-        token => {
-          const decoded = jwt_decode(token)
-          dispatch(completeLogin(token, decoded));
-          return { token, decoded }
+        if (token) {
+            headers["Authorization"] = `Token ${token}`;
         }
-      ).catch( e => {
-        const { message, promise, ...rest } = e;
+        return fetch("/api/auth/user/", {headers, })
+            .then(res => {
+                if (res.status < 500) {
+                    return res.json().then(data => {
+                        return {status: res.status, data};
+                    })
+                } else {
+                    console.log("Server Error!");
+                    throw res;
+                }
+            })
+            .then(res => {
+                if (res.status === 200) {
+                    dispatch({type: 'USER_LOADED', user: res.data });
+                    return res.data;
+                } else if (res.status >= 400 && res.status < 500) {
+                    dispatch({type: "AUTHENTICATION_ERROR", data: res.data});
+                    throw res.data;
+                }
+            })
+    }
+}
 
-        if(isPromise(promise))
-          return promise.then(extra =>
-            dispatch(
-              failLogin(message, extra)))
+export const login = (username, password) => {
+    return (dispatch, getState) => {
+        let headers = {"Content-Type": "application/json"};
+        let body = JSON.stringify({username, password});
 
-        return alert("ha ocurrido un error");
-      })
-  }
+        return fetch("/api/auth/login/", {headers, body, method: "POST"})
+            .then(res => {
+                if (res.status < 500) {
+                    return res.json().then(data => {
+                        return {status: res.status, data};
+                    })
+                } else {
+                    console.log("Server Error!");
+                    throw res;
+                }
+            })
+            .then(res => {
+                if (res.status === 200) {
+                    dispatch({type: 'LOGIN_SUCCESSFUL', data: res.data });
+                    return res.data;
+                } else if (res.status === 403 || res.status === 401) {
+                    dispatch({type: "AUTHENTICATION_ERROR", data: res.data});
+                    throw res.data;
+                } else {
+                    dispatch({type: "LOGIN_FAILED", data: res.data});
+                    throw res.data;
+                }
+            })
+    }
+}
+
+export const register = (username, password) => {
+    return (dispatch, getState) => {
+        let headers = {"Content-Type": "application/json"};
+        let body = JSON.stringify({username, password});
+
+        return fetch("/api/auth/register/", {headers, body, method: "POST"})
+            .then(res => {
+                if (res.status < 500) {
+                    return res.json().then(data => {
+                        return {status: res.status, data};
+                    })
+                } else {
+                    console.log("Server Error!");
+                    throw res;
+                }
+            })
+            .then(res => {
+                if (res.status === 200) {
+                    dispatch({type: 'REGISTRATION_SUCCESSFUL', data: res.data });
+                    return res.data;
+                } else if (res.status === 403 || res.status === 401) {
+                    dispatch({type: "AUTHENTICATION_ERROR", data: res.data});
+                    throw res.data;
+                } else {
+                    dispatch({type: "REGISTRATION_FAILED", data: res.data});
+                    throw res.data;
+                }
+            })
+    }
+}
+
+export const logout = () => {
+    return (dispatch, getState) => {
+        let headers = {"Content-Type": "application/json"};
+
+        return fetch("/api/auth/logout/", {headers, body: "", method: "POST"})
+            .then(res => {
+                if (res.status === 204) {
+                    return {status: res.status, data: {}};
+                } else if (res.status < 500) {
+                    return res.json().then(data => {
+                        return {status: res.status, data};
+                    })
+                } else {
+                    console.log("Error!");
+                    throw res;
+                }
+            })
+            .then(res => {
+                if (res.status === 204) {
+                    dispatch({type: 'LOGOUT_SUCCESSFUL'});
+                    return res.data;
+                } else if (res.status === 403 || res.status === 401) {
+                    dispatch({type: "AUTHENTICATION_ERROR", data: res.data});
+                    throw res.data;
+                }
+            })
+    }
+}
