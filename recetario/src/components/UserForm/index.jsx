@@ -65,9 +65,7 @@ export default reduxForm({
     console.log(uuid())
     dispatch(actions.register(
       uuid(),
-      values.firstName,
-      values.lastName,
-      values.email,
+      
       values.username,
       values.password,
     ));
