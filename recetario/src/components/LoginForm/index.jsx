@@ -45,7 +45,7 @@ export default reduxForm({
   form: 'loginUserForm',
   onSubmit(values, dispatch) {
     console.log(uuid())
-    dispatch(actions.Login(
+    dispatch(actions.addUser(
       uuid(),
       values.username,
       values.password,

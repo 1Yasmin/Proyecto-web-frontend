@@ -110,7 +110,7 @@ export const register = (username, password) => {
         let headers = {"Content-Type": "application/json"};
         let body = JSON.stringify({username, password});
 
-        return fetch("https://127.0.0.1:8000/api/v1/CreateUser/", {headers, body, method: "POST"})
+        return fetch("http://localhost:8000/api/v1/CreateUser/", {headers, body, method: "POST"})
             .then(res => {
                 if (res.status < 500) {
                     return res.json().then(data => {
