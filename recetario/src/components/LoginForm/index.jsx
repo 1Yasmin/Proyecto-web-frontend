@@ -35,7 +35,7 @@ const LoginForm = ({ handleSubmit }) => (
       component={renderInput}
     />
     <button type="submit" >
-      Get Token
+      Login
     </button>
   </form>
 );

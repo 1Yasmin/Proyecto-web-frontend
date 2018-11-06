@@ -91,7 +91,9 @@ export const login = (username, password) => {
                 }
             })
             .then(res => {
+          console.log(res)
                 if (res.status === 200) {
+                    window.location.href = "http://localhost:3000/home";
                     dispatch({type: 'LOGIN_SUCCESSFUL', data: res.data });
                     return res.data;
                 } else if (res.status === 403 || res.status === 401) {
