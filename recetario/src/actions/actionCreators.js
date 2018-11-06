@@ -79,7 +79,7 @@ export const login = (username, password) => {
         let headers = {"Content-Type": "application/json"};
         let body = JSON.stringify({username, password});
 
-        return fetch("/api/auth/login/", {headers, body, method: "POST"})
+        return fetch("http://localhost:8000/api/v1/rest-auth/login/", {headers, body, method: "POST"})
             .then(res => {
                 if (res.status < 500) {
                     return res.json().then(data => {

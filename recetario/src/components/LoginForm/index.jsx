@@ -35,7 +35,7 @@ const LoginForm = ({ handleSubmit }) => (
       component={renderInput}
     />
     <button type="submit" >
-      Login
+      Get Token
     </button>
   </form>
 );
@@ -44,9 +44,8 @@ const LoginForm = ({ handleSubmit }) => (
 export default reduxForm({
   form: 'loginUserForm',
   onSubmit(values, dispatch) {
-    console.log(uuid())
-    dispatch(actions.addUser(
-      uuid(),
+    console.log("login")
+    dispatch(actions.login(
       values.username,
       values.password,
     ));

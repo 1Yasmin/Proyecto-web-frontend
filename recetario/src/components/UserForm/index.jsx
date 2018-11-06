@@ -62,7 +62,7 @@ const UserForm = ({ handleSubmit }) => (
 export default reduxForm({
   form: 'createUserForm',
   onSubmit(values, dispatch) {
-    console.log(uuid())
+    console.log(values.password,values.username)
     dispatch(actions.register(
       uuid(),
       
