@@ -91,7 +91,9 @@ export const login = (username, password) => {
                 }
             })
             .then(res => {
-          console.log(res)
+          const token = res.data.key;
+          console.log(token);
+          localStorage.setItem('jwtToken',token);
                 if (res.status === 200) {
                     window.location.href = "http://localhost:3000/home";
                     dispatch({type: 'LOGIN_SUCCESSFUL', data: res.data });
