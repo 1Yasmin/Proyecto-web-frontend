@@ -4,8 +4,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 
-import * as actions from '../../actions/actionCreators';
-
+import * as actions from '../../actions/actionsCreators';
 
 const renderInput = ({ input, meta, ...props }) => (
   <div className="my-input">
@@ -62,12 +61,14 @@ const UserForm = ({ handleSubmit }) => (
 export default reduxForm({
   form: 'createUserForm',
   onSubmit(values, dispatch) {
-    console.log(values.password,values.username)
-    dispatch(actions.register(
+    console.log(uuid())
+    dispatch(actions.addUser(
       uuid(),
-      
-      values.username,
+      values.firstName,
+      values.lastName,
+      values.email,
       values.password,
+      values.username,
     ));
   },
   validate(values) {
@@ -86,3 +87,4 @@ export default reduxForm({
     return errors;
   }
 })(UserForm);
+

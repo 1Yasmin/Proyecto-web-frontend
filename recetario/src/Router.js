@@ -1,16 +1,16 @@
 import React from 'react';
-import { Switch,Route } from 'react-router-dom';
+import {  BrowserRouter, Switch,Route } from 'react-router-dom';
 import LoginPage from './pages/loginpage';
-import FavoritesPage from './pages/favoritespage';
-import HomePage from './pages/homepage';
+//import FavoritesPage from './pages/favoritespage';
+//import HomePage from './pages/homepage';
 import SigninPage from './pages/signuppage';
+
+
 const Router = () => (
-  <Switch>
-  <Route exact path='/' component={LoginPage} />
-  <Route exact path='/favoritos' component={FavoritesPage} />
-  <Route exact path='/home' component={HomePage} />
-  <Route exact path='/signup' component={SigninPage} />
-  </Switch>
+    <Switch>
+      <Route exact path='/' component={LoginPage} />
+      <Route exact path='/signup' component={SigninPage} />
+    </Switch>
 );
 
 export default Router;

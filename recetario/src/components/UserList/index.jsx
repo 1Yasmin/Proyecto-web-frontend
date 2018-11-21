@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import * as selectors from '../../reducers';
-import * as actions from '../../actions/actionCreators';
+import * as actions from '../../actions/actionsCreators';
 import User from '../User';
 
 

@@ -18,8 +18,8 @@ const Navigation = (props)=> <nav>
 class App extends Component {
   render() {
     return <div className="page-container">      
-    <Router />
-    </div>
+        <Router />
+      </div>
   }
 }
 

@@ -1,9 +1,9 @@
 import uuid from 'uuid-v4';
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import './loginForm.css'
+//import './loginForm.css'
 
-import * as actions from '../../actions/actionCreators';
+import * as actions from '../../actions/actionsCreators';
 
 
 const renderInput = ({ input, meta, ...props }) => (

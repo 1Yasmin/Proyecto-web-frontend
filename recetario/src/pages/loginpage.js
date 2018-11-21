@@ -2,7 +2,7 @@
 import React from 'react';
 //imports de archivos del proyecto
 import LoginForm from '../components/LoginForm';
-import './styles.css'
+//import './styles.css'
 
 export default function Loginpage(props){
   return <div>

@@ -48,7 +48,7 @@ export default combineReducers({
   order,
 });
 
-
+//Selectores 
 export const getUser = (state, id) => state.byId[id];
 export const getUserIds = (state) => state.order;
 export const getUsers = (state) => state.order.map(
