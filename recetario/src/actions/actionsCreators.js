@@ -44,12 +44,12 @@ export const loginStarted = () => ({
 });
 
 export const loginSuccess = token => ({
-  type: types.LOGIN_SUCCESS,
+  type: types.LOGIN_SUCCEED,
   token:token
 });
 
 export const loginFail = error =>({
-  type: types.LOGIN_FAIL,
+  type: types.LOGIN_FAILED,
   error: error,
 });
 

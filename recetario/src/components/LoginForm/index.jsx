@@ -43,13 +43,6 @@ const LoginForm = ({ handleSubmit }) => (
 
 export default reduxForm({
   form: 'loginUserForm',
-  onSubmit(values, dispatch) {
-    console.log("login")
-    dispatch(actions.login(
-      values.username,
-      values.password,
-    ));
-  },
   validate(values) {
     const errors = {};
     if(!values.password){
