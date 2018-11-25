@@ -1,5 +1,7 @@
 import { call, put } from 'redux-saga/effects'
+import { delay } from 'redux-saga';
 import * as actions from '../actions/actionsCreators';
+
 
 const API_URL = 'http://localhost:8000/api/v1';
 
@@ -24,5 +26,16 @@ export const createUser = (url, data) => {
 export function* postUser(action){
     const {firstName, lastName, username, password, email } = action.payload;
     const newUser = yield call(createUser, `${API_URL}/CreateUser/`, {firstName, lastName, username, password, email});
-    yield put(actions.addUser())
+    yield put({
+  type: "USER_ADDED_ASYNC",
+  payload: {
+    
+    firstName,
+    lastName,
+    email,
+    username,
+  },
+});
+  
+    
 }

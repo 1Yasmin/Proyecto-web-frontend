@@ -52,34 +52,3 @@ export const loginFail = error =>({
   type: types.LOGIN_FAILED,
   error: error,
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
