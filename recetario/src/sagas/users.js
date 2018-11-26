@@ -5,14 +5,14 @@ import * as actions from '../actions/actionsCreators';
 
 const API_URL = 'http://localhost:8000/api/v1';
 
-export const createUser = (url, data) => {
+export const postData = (url, data) => {
   console.log(data);
   
   return fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': "http://localhost:8000",
+      'Access-Control-Allow-Origin': "*",
     },
     body: JSON.stringify({
       ...data
@@ -24,18 +24,10 @@ export const createUser = (url, data) => {
 
 
 export function* postUser(action){
-    const {firstName, lastName, username, password, email } = action.payload;
-    const newUser = yield call(createUser, `${API_URL}/CreateUser/`, {firstName, lastName, username, password, email});
-    yield put({
-  type: "USER_ADDED_ASYNC",
-  payload: {
+  
+    const {first_name, last_name, username, password, email } = action.payload;
+    const newUser = yield call(postData, `${API_URL}/CreateUser/`, {first_name, last_name, username, password, email});
     
-    firstName,
-    lastName,
-    email,
-    username,
-  },
-});
   
     
 }

@@ -1,14 +1,15 @@
 import * as types from '../types';
 
 //acciones de usuario
-export const addUser = (id, firstName, lastName, email, username) => ({
+export const addUser = (id, first_name, last_name, email, password, username) => ({
   type: types.USER_ADDED,
   payload: {
     id,
-    firstName,
-    lastName,
+    first_name,
+    last_name,
     email,
-    username,
+    password,
+    username,    
   },
 });
 
