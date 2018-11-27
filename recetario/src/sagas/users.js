@@ -50,7 +50,7 @@ export function* login(action){
     const result = yield call(postData, `${API_URL}/auth/token/obtain/`, {username, password});
     console.log(result);
     if(Object.keys(result).length === 1){
-     yield put(actions.loginFail, result.username);
+     yield put({type: 'LOGIN_FAILED',username: result.username});
       errors = result.username;
       alert(result.username)
     }else{ 
