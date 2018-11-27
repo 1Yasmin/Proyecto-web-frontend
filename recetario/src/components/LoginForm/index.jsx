@@ -22,7 +22,7 @@ const renderInput = ({ input, meta, ...props }) => (
 //cambiar a onSubmit en vez de action cuando se tenga verificacion
 //onSubmit={handleSubmit}>
 const LoginForm = ({ handleSubmit }) => (
-  <form className="btnHome" action="http://localhost:3000/start"> 
+  <form className="btnHome" onSubmit={handleSubmit}> 
     <Field
       type="text"
       name="username"
@@ -44,6 +44,12 @@ const LoginForm = ({ handleSubmit }) => (
 
 export default reduxForm({
   form: 'loginUserForm',
+   onSubmit(values, dispatch) {
+    dispatch(actions.loginStarted(
+      values.username,
+      values.password,
+    ));   
+  },
   validate(values) {
     const errors = {};
     if(!values.password){

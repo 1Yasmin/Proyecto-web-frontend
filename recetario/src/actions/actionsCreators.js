@@ -40,17 +40,28 @@ export const removeRecipe = id => ({
 });
 
 //autenticacion
-export const loginStarted = () => ({
-    type: types.LOGIN_STARTED
-  
+export const loginStarted = (username, password) => ({
+    type: types.LOGIN_STARTED,
+    payload: {
+      username, 
+      password,
+    }  
 });
 
-export const loginSuccess = token => ({
+export const loginSuccess = (token, id, username) => ({
   type: types.LOGIN_SUCCEED,
-  token:token
+  payload:{
+    token,
+    id,
+    username
+  }
 });
 
 export const loginFail = error =>({
   type: types.LOGIN_FAILED,
   error: error,
 });
+
+
+
+

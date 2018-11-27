@@ -69,7 +69,7 @@ export default reduxForm({
       values.email,
       values.password,
       values.username,
-    ), reset('createUserForm'));
+    ));
     
   },
   validate(values) {
