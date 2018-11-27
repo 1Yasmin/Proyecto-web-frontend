@@ -8,11 +8,16 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './configstore/store';
 
+
+
+
+
+
 const app = 
   <Provider store={store}>
-  <BrowserRouter>
-  <App />      
-  </BrowserRouter>
+    <BrowserRouter>
+      <App />       
+    </BrowserRouter>
   </Provider>    
 
 

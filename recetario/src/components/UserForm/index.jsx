@@ -2,7 +2,7 @@ import uuid from 'uuid-v4';
 import validator from 'email-validator';
 import React from 'react';
 import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, reset} from 'redux-form';
 
 import * as actions from '../../actions/actionsCreators';
 
@@ -69,7 +69,8 @@ export default reduxForm({
       values.email,
       values.password,
       values.username,
-    ));
+    ), reset('createUserForm'));
+    
   },
   validate(values) {
     const errors = {};

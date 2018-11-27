@@ -14,10 +14,10 @@ const Navigation = (props)=> <nav>
       </nav>
 
 
-export default function Homepage(props){
+export default function Recetaspage(props){
   return <div>
-    <h2>Home</h2>
-    <RecipeApp />
-    <Navigation />
+    <h2>Nueva Receta</h2>
+      <RecipeApp />
+      <Navigation />
     </div>
 }
