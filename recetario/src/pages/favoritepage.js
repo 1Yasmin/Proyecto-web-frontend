@@ -9,6 +9,13 @@ const Navigation = (props)=> <nav>
       <li>
       <NavLink to='/start'>Home</NavLink>
       </li>
+      <li>
+      <NavLink to='/todos'>Mis Recetas</NavLink>
+      </li>
+      <li>
+      <NavLink to='/favoritos'>Favoritos</NavLink>
+      </li>
+      <NavLink to='/AllRecipes'>Más Recetas</NavLink>
       </ul>
       </nav>
 
