@@ -8,9 +8,10 @@ const Recipe = ({ titulo, descripcion, onDelete }) => (
     { titulo }
     <br/>
     { descripcion }
-    <a onClick={onDelete}>
-      &times;
-    </a>
+    <br/>
+    <button onClick={onDelete}>
+      Remover
+    </button>
     
   </li>
 );
