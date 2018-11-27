@@ -8,7 +8,7 @@ const Navigation = (props)=> <nav>
       <NavLink to='/'>Log Out</NavLink>
       </li>
       <li>
-      <NavLink to='/favoritos'>Favoritos</NavLink>
+      <NavLink to='/start'>Home</NavLink>
       </li>
       </ul>
       </nav>
@@ -16,8 +16,7 @@ const Navigation = (props)=> <nav>
 
 export default function Recetaspage(props){
   return <div>
-    <h2>Nueva Receta</h2>
+      <Navigation />  
       <RecipeApp />
-      <Navigation />
     </div>
 }

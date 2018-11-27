@@ -9,14 +9,20 @@ const Navigation = (props)=> <nav>
       <li>
       <NavLink to='/start'>Home</NavLink>
       </li>
+      <li>
+      <NavLink to='/todos'>Mis Recetas</NavLink>
+      </li>
+      <li>
+      <NavLink to='/favoritos'>Favoritos</NavLink>
+      </li>
+      <NavLink to='/AllRecipes'>Más Recetas</NavLink>
       </ul>
       </nav>
 
 
-export default function Favoritepage(props){
+export default function TodosPage(props){
   return <div>
-    <h2>Favoritos</h2>
-    
-    <Navigation />
+      <h2>Recetas</h2>
+      <Navigation />
     </div>
 }

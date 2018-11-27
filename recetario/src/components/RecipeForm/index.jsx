@@ -26,6 +26,12 @@ const RecipeForm = ({ handleSubmit }) => (
       placeholder="Titulo:"
       component={renderInput}
     />
+     <Field
+      type="text"
+      name="ingredientes"
+      placeholder="Ingredientes:"
+      component={renderInput}
+    />
     <Field
       type="text"
       name="descripcion"
@@ -47,6 +53,7 @@ export default reduxForm({
     dispatch(actions.addRecipe(
       uuid(),
       values.titulo,
+      values.ingredientes,
       values.descripcion,
       
     ));

@@ -9,14 +9,16 @@ const Navigation = (props)=> <nav>
       <li>
       <NavLink to='/start'>Home</NavLink>
       </li>
+      <li>
+      <NavLink to='/nuevaCategoria'>Crear Categoría</NavLink>
+      </li>
       </ul>
       </nav>
 
 
-export default function Favoritepage(props){
+export default function Categoriapage(props){
   return <div>
-    <h2>Favoritos</h2>
-    
+    <h2>Categorias</h2>
     <Navigation />
     </div>
 }

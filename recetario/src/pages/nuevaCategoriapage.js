@@ -13,9 +13,9 @@ const Navigation = (props)=> <nav>
       </nav>
 
 
-export default function Favoritepage(props){
+export default function NuevaCategoriapage(props){
   return <div>
-    <h2>Favoritos</h2>
+    <h2>Nueva Categoría</h2>
     
     <Navigation />
     </div>

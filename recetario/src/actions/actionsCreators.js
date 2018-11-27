@@ -24,11 +24,12 @@ export const confirmUser = id => ({
 });
 
 //acciones de receta
-export const addRecipe = (id, titulo, descripcion) => ({
+export const addRecipe = (id, titulo, ingredientes, descripcion) => ({
   type: types.ADD_RECIPE,
   payload: {
     id,
     titulo,
+    ingredientes,
     descripcion,
       
   },

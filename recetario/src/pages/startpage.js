@@ -12,10 +12,10 @@ const Navigation = (props)=> <nav>
           <NavLink to='/recetas'>Añadir Receta</NavLink>
         </li>
         <li>
-          <NavLink to='/favoritos'>Categorias</NavLink>
+          <NavLink to='/categorias'>Categorias</NavLink>
         </li>
         <li>
-          <NavLink to='/favoritos'>Ver Recetas</NavLink>
+          <NavLink to='/todos'>Ver Recetas</NavLink>
         </li>
       </ul>
       </nav>
