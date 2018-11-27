@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import * as selectors from '../../reducers';
 import * as actions from '../../actions/actionsCreators';
 
-const Recipe = ({ titulo, contenido, onDelete }) => (
+const Recipe = ({ titulo, descripcion, onDelete }) => (
   <li>
     { titulo }
-    </br>
-    { contenido }
+    <br/>
+    { descripcion }
     <a onClick={onDelete}>
       &times;
     </a>
@@ -17,11 +17,11 @@ const Recipe = ({ titulo, contenido, onDelete }) => (
 
 export default connect(
   (state, { id }) => ({
-    ...selectors.getUser(state, id),
+    ...selectors.getRecipe(state, id),
   }),
   (dispatch, { id }) => ({
     onDelete() {
-      dispatch(actions.removeUser(id));
+      dispatch(actions.removeRecipe(id));
     },
   }),
-)(User);
+)(Recipe);

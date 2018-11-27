@@ -17,7 +17,7 @@ const Navigation = (props)=> <nav>
 export default function Homepage(props){
   return <div>
     <h2>Home</h2>
-    
+    <RecipeApp />
     <Navigation />
     </div>
 }

@@ -24,18 +24,19 @@ export const confirmUser = id => ({
 });
 
 //acciones de receta
-export const addRecipe = (titulo,descripcion)=>({
-    type:types.ADD_RECIPE,
-    payload:{
-      titulo,
-      descripcion
-    }
-  
+export const addRecipe = (id, titulo, descripcion) => ({
+  type: types.ADD_RECIPE,
+  payload: {
+    id,
+    titulo,
+    descripcion,
+      
+  },
 });
 
-export const deleteRecipe = id =>({
-  type:types.DELETE_RECIPE,
-  id
+export const removeRecipe = id => ({
+  type: types.DELETE_RECIPE,
+  payload: { id },
 });
 
 //autenticacion
