@@ -66,21 +66,24 @@ export function* login(action){
   
 }
 
-/*
+
 //crear recetas
 export function* crearReceta(action){
     yield put(startSubmit('createRecipeForm'));
     let errors = {};
-    const {titulo, ingredientes, descripcion, user_id } = action.payload;
-    const newUser = yield call(postData, `${API_URL}/recetas/`, {titulo, ingredientes, descripcion, user_id});
-    if(Object.keys(newUser).length === 1){
-     yield put({type: 'REQUEST_FAILED', errors: newUser.username});
-      errors = newUser.username;
-      alert(newUser.username)
+    const {titulo, ingredientes, descripcion, categoria } = action.payload;
+    const nombre = titulo;
+    const ingrediente = ingredientes;
+    const preparacion = descripcion;
+    const created_by = localStorage.getItem('userId');
+    const result = yield call(postData, `${API_URL}/recetas/`, {nombre, ingrediente, preparacion, created_by});
+    if(Object.keys(result).length === 1){
+     yield put({type: 'REQUEST_FAILED', errors: result.username});
+      errors = result.username;
+      alert(result.username)
     }else{ 
       alert("¡creación exitosa!")
       yield put(reset('createRecipeForm'));
     }
     yield put(stopSubmit('createRecipeForm', errors));
 }
-*/
