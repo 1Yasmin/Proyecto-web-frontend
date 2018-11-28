@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import { routerReducer } from 'react-router-redux';
+import { persistCombineReducers } from 'redux-persist';
+
 import users, * as fromUsers from './users';
 import recipes, * as fromRecipes from './recipes';
+
+
 
 const Rootreducer = combineReducers({
   users,

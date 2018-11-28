@@ -2,7 +2,7 @@ import { call, put } from 'redux-saga/effects'
 import { delay } from 'redux-saga';
 import {startSubmit, stopSubmit, reset} from 'redux-form';
 import * as actions from '../actions/actionsCreators';
-
+import { Redirect } from "react-router-dom";
 
 const API_URL = 'http://localhost:8000/api/v1';
 

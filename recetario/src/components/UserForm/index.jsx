@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm, reset} from 'redux-form';
 
 import * as actions from '../../actions/actionsCreators';
+import '../LoginForm/styles.css';
 
 const renderInput = ({ input, meta, ...props }) => (
   <div className="my-input">
@@ -51,7 +52,7 @@ const UserForm = ({ handleSubmit }) => (
       placeholder="Password:"
       component={renderInput}
     />
-    <button type="submit">
+    <button type="submit" className="loginBtn">
       Agregar!
     </button>
   </form>

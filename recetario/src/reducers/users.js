@@ -26,6 +26,14 @@ const byId = (state = {}, action) => {
       };
       return newState;
     }
+    case types.LOGIN_SUCCEED: {
+      return {
+        ...state,
+        [action.payload.id]: {
+          ...action.payload,          
+        },
+      }
+    }
     default:
       return state;
   }
