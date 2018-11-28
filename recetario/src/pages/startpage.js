@@ -7,11 +7,7 @@ const Navigation = (props)=>
 
   <nav>
       <ul>
-        <li className="myList">
-          <button className="btnCount">
-            <NavLink to='/' className="myUnderline">cerrar sesión</NavLink>
-          </button>
-        </li>
+        
         <li className="myList">
           <button className="btnCount">
             <NavLink to='/recetas' className="myUnderline">Añadir Receta</NavLink>
@@ -25,6 +21,11 @@ const Navigation = (props)=>
         <li className="myList">
           <button className="btnCount">
           <NavLink to='/todos' className="myUnderline">Ver Recetas</NavLink>
+          </button>
+        </li>
+        <li className="myList">
+          <button className="btnCount">
+            <NavLink to='/' className="myUnderline">Cerrar sesión</NavLink>
           </button>
         </li>
       </ul>

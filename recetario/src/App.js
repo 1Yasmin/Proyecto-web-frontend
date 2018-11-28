@@ -5,7 +5,7 @@ import './app.css';
 // container del App
 class App extends Component {
   render() {
-    return <div className="page-container">      
+    return <div className="page-container"> 
         <Router />
       </div>
   }

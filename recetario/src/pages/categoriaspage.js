@@ -1,27 +1,26 @@
 import React from 'react';
 import CategoriaApp from '../components/CategoriaApp';
-
+import './loginpagestyles.css';
 
 import {NavLink} from 'react-router-dom';
-const Navigation = (props)=> <nav>
-      <ul>
+
+
+const Navigation = (props)=> <nav className="navHeader">
+      <ul className="myList">
       <li>
-      <NavLink to='/'>Log Out</NavLink>
+      <NavLink to='/'><button className="logoutBtn">Log Out</button></NavLink>
       </li>
       <li>
-      <NavLink to='/start'>Home</NavLink>
-      </li>
-      <li>
-      <NavLink to='/nuevaCategoria'>Crear Categoría</NavLink>
+      <NavLink to='/start'><i class="material-icons homeIcon">home</i></NavLink>
+      
       </li>
       </ul>
       </nav>
 
-
 export default function Categoriapage(props){
   return <div>
-    <h2>Categorias</h2>
-    <Navigation />
+     <Navigation />
+    <h2>Categorias</h2>   
     <CategoriaApp />
     </div>
 }

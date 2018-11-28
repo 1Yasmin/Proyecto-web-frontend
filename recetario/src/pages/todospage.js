@@ -1,31 +1,43 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
-
 import RecipeList from '../components/RecipeList';
 
-const Navigation = (props)=> <nav>
+import './loginpagestyles.css';
+
+import {NavLink} from 'react-router-dom';
+
+
+const Navigation = (props)=> <nav className="navHeader">
+      <ul className="myList">
+      <li>
+      <NavLink to='/'><button className="logoutBtn">Log Out</button></NavLink>
+      </li>
+      <li>
+      <NavLink to='/start'><i class="material-icons homeIcon">home</i></NavLink>
+      
+      </li>
+      </ul>
+      </nav>
+
+
+
+const Navigation2 = (props)=> <nav>
       <ul>
-      <li>
-      <NavLink to='/'>Log Out</NavLink>
-      </li>
-      <li>
-      <NavLink to='/start'>Home</NavLink>
-      </li>
       <li>
       <NavLink to='/todos'>Mis Recetas</NavLink>
       </li>
       <li>
       <NavLink to='/favoritos'>Favoritos</NavLink>
       </li>
-      <NavLink to='/AllRecipes'>Más Recetas</NavLink>
       </ul>
       </nav>
 
 
 export default function TodosPage(props){
   return <div>
+      <Navigation />
       <h2>Recetas</h2>
       <RecipeList />
-      <Navigation />
+     <Navigation2 />
+      
     </div>
 }

@@ -4,10 +4,11 @@
   cursor: pointer;
   border-radius: 14px;
   margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
   box-shadow: 10px, 10px;
-  width: 6rem;
-  
+  width: 20rem;
+  height: 5rem;
+  font-size: 2.5rem;
   
 }
 
@@ -23,6 +24,7 @@
 
 .myList {
   list-style-type: none;
+  align-items: flex-end;
   margin: 0;
   padding: 0;
   
@@ -47,6 +49,7 @@
 
 .body {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   
@@ -55,5 +58,29 @@
 .homeTxt {
   display:block;
   height: 2px; 
-  padding: 0;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.homeIcon{
+  font-size: 3rem;
+}
+
+.navHeader{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.logoutBtn{
+  background-color:#f05a77;
+  color: white;
+  cursor: pointer;
+  border-radius: 14px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.8rem;
+  box-shadow: 10px, 10px;
+  width: 5rem;
+  height: 2rem;
+
 }
