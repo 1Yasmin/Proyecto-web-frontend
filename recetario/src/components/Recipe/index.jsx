@@ -3,14 +3,20 @@ import { connect } from 'react-redux';
 import * as selectors from '../../reducers';
 import * as actions from '../../actions/actionsCreators';
 
-const Recipe = ({ titulo, descripcion, onDelete }) => (
+const Recipe = ({ titulo, ingredientes, descripcion, isFavorite, onDelete, onFavorite }) => (
   <li>
-    { titulo }
+    <h1> { titulo } </h1>
+    Ingredientes:  { ingredientes }
     <br/>
-    { descripcion }
+    <br/>
+    Descripcion:  { descripcion }
+    <br/>
+    <button onClick={onFavorite}>
+      Agregar a favoritos
+    </button>
     <br/>
     <button onClick={onDelete}>
-      Remover
+      Remover receta
     </button>
     
   </li>
@@ -23,6 +29,9 @@ export default connect(
   (dispatch, { id }) => ({
     onDelete() {
       dispatch(actions.removeRecipe(id));
+    },
+    onFavorite() {
+      dispatch(actions.confirmFavorite(id));
     },
   }),
 )(Recipe);

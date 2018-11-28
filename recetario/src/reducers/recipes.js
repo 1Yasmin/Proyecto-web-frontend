@@ -15,10 +15,21 @@ const byId = (state = {}, action) => {
       const newState = { ...state };
       delete newState[action.payload.id];
       return newState;
-    }    
+    }
+    
+    case types.CONFIRM_RECIPE: {
+      const newState = { ...state };
+      newState[action.payload.id] = {
+        ...newState[action.payload.id],
+        isFavorite: true,
+      }
+      return newState;
+    }
     default:
       return state;
   }
+    
+    
 };
 
 const order = (state = [], action) => {

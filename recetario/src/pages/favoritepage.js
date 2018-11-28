@@ -1,6 +1,8 @@
 import React from 'react';
-
 import {NavLink} from 'react-router-dom';
+
+import FavoriteList from '../components/FavoriteList';
+
 const Navigation = (props)=> <nav>
       <ul>
       <li>
@@ -23,7 +25,7 @@ const Navigation = (props)=> <nav>
 export default function Favoritepage(props){
   return <div>
     <h2>Favoritos</h2>
-    
+    <FavoriteList />
     <Navigation />
     </div>
 }

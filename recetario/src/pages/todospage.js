@@ -1,6 +1,8 @@
 import React from 'react';
-
 import {NavLink} from 'react-router-dom';
+
+import RecipeList from '../components/RecipeList';
+
 const Navigation = (props)=> <nav>
       <ul>
       <li>
@@ -23,6 +25,7 @@ const Navigation = (props)=> <nav>
 export default function TodosPage(props){
   return <div>
       <h2>Recetas</h2>
+      <RecipeList />
       <Navigation />
     </div>
 }

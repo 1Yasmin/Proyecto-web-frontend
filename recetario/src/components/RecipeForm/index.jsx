@@ -40,7 +40,7 @@ const RecipeForm = ({ handleSubmit }) => (
     />
     
     <button type="submit">
-      Agregar!
+      Agregar receta
     </button>
   </form>
 );

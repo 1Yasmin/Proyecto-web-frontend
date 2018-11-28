@@ -23,14 +23,20 @@ export const confirmUser = id => ({
   payload: { id },
 });
 
+export const confirmFavorite = id => ({
+  type: types.CONFIRM_RECIPE,
+  payload: { id },
+});
+
 //acciones de receta
-export const addRecipe = (id, titulo, ingredientes, descripcion) => ({
+export const addRecipe = (id, titulo, ingredientes, descripcion, isFavorite) => ({
   type: types.ADD_RECIPE,
   payload: {
     id,
     titulo,
     ingredientes,
     descripcion,
+    isFavorite:false,
       
   },
 });
