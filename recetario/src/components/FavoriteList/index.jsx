@@ -6,15 +6,12 @@ import * as actions from '../../actions/actionsCreators';
 import Recipe from '../Recipe';
 
 
-const FavoriteList = ({ recipeIds }) => (
-    Recipe.isFavorite ? (
+const FavoriteList = ({ recipeIds, recipes }) => (
     <ul>
-      { recipeIds.map(id => <Recipe key={id} id={id} />) }
-    </ul>) : (
-    <div>
-     No hay favoritos
-      </div>
-    )
+    {
+      recipes.isFavorite ? recipeIds.map(id => <Recipe key={id} id={id} />) : <li> No hay favoritos! </li>
+     }
+    </ul>
    
 );
 
@@ -22,6 +19,7 @@ const FavoriteList = ({ recipeIds }) => (
 export default connect(
   state => ({
     recipeIds: selectors.getRecipeIds(state),
+    recipes: selectors.getRecipes(state),
   }),
   undefined,
 )(FavoriteList);
