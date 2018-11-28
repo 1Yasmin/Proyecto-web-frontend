@@ -55,8 +55,10 @@ export function* login(action){
       alert(result.username)
     }else{ 
       yield put(actions.loginSuccess(result.token, result.userid, result.username));
+      const token = result.token;
+      localStorage.setItem('jwtToken', token);
       console.log("inicio sesion"); 
-      window.location.href = "http://localhost:3000/start";
+      
     }
     yield put(stopSubmit('loginUserForm', errors));
   

@@ -3,13 +3,15 @@ import { connect } from 'react-redux';
 import * as selectors from '../../reducers';
 import * as actions from '../../actions/actionsCreators';
 
-const Recipe = ({ titulo, ingredientes, descripcion, isFavorite, onDelete, onFavorite }) => (
+const Recipe = ({ titulo, ingredientes, descripcion, categoria, isFavorite, onDelete, onFavorite }) => (
   <li>
     <h1> { titulo } </h1>
     Ingredientes:  { ingredientes }
     <br/>
     <br/>
     Descripcion:  { descripcion }
+    <br/>
+    Categoria: {categoria}
     <br/>
     <button onClick={onFavorite}>
       Agregar a favoritos

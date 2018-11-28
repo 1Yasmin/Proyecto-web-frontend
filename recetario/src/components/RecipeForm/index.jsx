@@ -38,7 +38,12 @@ const RecipeForm = ({ handleSubmit }) => (
       placeholder="Descripcion:"
       component={renderInput}
     />
-    
+    <Field
+      type="text"
+      name="categoria"
+      placeholder="Categoria:"
+      component={renderInput}
+    />
     <button type="submit">
       Agregar receta
     </button>
@@ -55,7 +60,7 @@ export default reduxForm({
       values.titulo,
       values.ingredientes,
       values.descripcion,
-      
+      values.categoria,
     ));
   },
   

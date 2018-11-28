@@ -29,13 +29,14 @@ export const confirmFavorite = id => ({
 });
 
 //acciones de receta
-export const addRecipe = (id, titulo, ingredientes, descripcion, isFavorite) => ({
+export const addRecipe = (id, titulo, ingredientes, descripcion, categoria, isFavorite) => ({
   type: types.ADD_RECIPE,
   payload: {
     id,
     titulo,
     ingredientes,
     descripcion,
+    categoria,
     isFavorite:false,
       
   },
