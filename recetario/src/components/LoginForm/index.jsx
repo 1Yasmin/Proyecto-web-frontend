@@ -22,7 +22,7 @@ const renderInput = ({ input, meta, ...props }) => (
 //cambiar a onSubmit en vez de action cuando se tenga verificacion
 //onSubmit={handleSubmit}>
 const LoginForm = ({ handleSubmit }) => (
-  <form className="btnHome" action="http://localhost:3000/start"> 
+  <form className="btnHome" onSubmit={handleSubmit}> 
     <Field
       type="text"
       name="username"
@@ -35,7 +35,7 @@ const LoginForm = ({ handleSubmit }) => (
       placeholder="Password:"
       component={renderInput}
     />
-    <button type="submit">
+    <button type="submit" className ="loginBtn">
       Login
     </button>
   </form>

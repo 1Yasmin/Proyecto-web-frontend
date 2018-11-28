@@ -56,6 +56,7 @@ export function* login(action){
     }else{ 
       yield put(actions.loginSuccess(result.token, result.userid, result.username));
       console.log("inicio sesion"); 
+      window.location.href = "http://localhost:3000/start";
     }
     yield put(stopSubmit('loginUserForm', errors));
   
