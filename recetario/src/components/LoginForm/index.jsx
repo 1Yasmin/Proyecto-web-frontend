@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 //import './loginForm.css'
 
 import * as actions from '../../actions/actionsCreators';
-
+import './styles.css';
 
 const renderInput = ({ input, meta, ...props }) => (
   <div className="my-input">
@@ -19,8 +19,7 @@ const renderInput = ({ input, meta, ...props }) => (
   </div>
 );
 
-//cambiar a onSubmit en vez de action cuando se tenga verificacion
-//onSubmit={handleSubmit}>
+
 const LoginForm = ({ handleSubmit }) => (
   <form className="btnHome" onSubmit={handleSubmit}> 
     <Field

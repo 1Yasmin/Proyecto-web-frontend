@@ -1,0 +1,14 @@
+.loginBtn {
+  background-color:#FFA500;
+  color: white;
+  cursor: pointer;
+  border-radius: 14px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 10px, 10px;
+  width: 5rem;
+}
+
+.loginBtn:hover {
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.24),0 4px 4px 0 rgba(0,0,0,0.19);
+}
