@@ -23,30 +23,35 @@ const renderInput = ({ input, meta, ...props }) => (
 const UserForm = ({ handleSubmit }) => (
   <form onSubmit={handleSubmit}>
     <Field
+      className="content"
       type="text"
       name="firstName"
       placeholder="Name:"
       component={renderInput}
     />
     <Field
+      className="content"
       type="text"
       name="lastName"
       placeholder="Last name:"
       component={renderInput}
     />
     <Field
+      className="content"
       type="text"
       name="username"
       placeholder="Username:"
       component={renderInput}
     />
     <Field
+      className="content"
       type="email"
       name="email"
       placeholder="Email:"
       component={renderInput}
     />
     <Field
+      className="content"
       type="password"
       name="password"
       placeholder="Password:"

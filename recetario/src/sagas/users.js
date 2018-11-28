@@ -56,7 +56,9 @@ export function* login(action){
     }else{ 
       yield put(actions.loginSuccess(result.token, result.userid, result.username));
       const token = result.token;
+      const userId = result.userid;
       localStorage.setItem('jwtToken', token);
+      localStorage.setItem('userId',userId);
       console.log("inicio sesion"); 
       window.location.href = "http://localhost:3000/start";
     }

@@ -21,14 +21,16 @@ const renderInput = ({ input, meta, ...props }) => (
 
 
 const LoginForm = ({ handleSubmit }) => (
-  <form className="btnHome" onSubmit={handleSubmit}> 
+  <form className="loginForm" onSubmit={handleSubmit}> 
     <Field
+      className="content"
       type="text"
       name="username"
       placeholder="Username:"
       component={renderInput}
     />
     <Field
+      className="content"
       type="password"
       name="password"
       placeholder="Password:"
