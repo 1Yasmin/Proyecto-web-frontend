@@ -5,12 +5,13 @@ import { persistCombineReducers } from 'redux-persist';
 
 import users, * as fromUsers from './users';
 import recipes, * as fromRecipes from './recipes';
-
+import categorias, * as fromCategorias from './categorias';
 
 
 const Rootreducer = combineReducers({
   users,
   recipes,
+  categorias,
   form: formReducer,
 });
 
@@ -34,3 +35,14 @@ export const getRecipeIds = (state) => fromRecipes.getRecipeIds(
 
 export const getRecipes = (state) =>
   fromRecipes.getRecipes(state.recipes);
+
+export const getCategoria = (state, id) =>
+  fromCategorias.getCategoria(state.categorias, id);
+
+export const getCategoriaIds = (state) => fromCategorias.getCategoriaIds(
+  state.categorias,
+);
+
+export const getCategorias = (state) =>
+  fromCategorias.getCategorias(state.categorias);
+

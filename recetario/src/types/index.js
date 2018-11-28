@@ -1,3 +1,7 @@
+//categorias
+export const ADD_CATEGORIA = 'ADD_CATEGORIA';
+export const DELETE_CATEGORIA = 'DELETE_CATEGORIA';
+
 //recetas
 export const ADD_RECIPE = 'ADD_RECIPE';
 export const DELETE_RECIPE = 'DELETE_RECIPE';

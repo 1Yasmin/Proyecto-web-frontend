@@ -1,4 +1,18 @@
 import * as types from '../types';
+//acciones de categoria
+export const addCategoria = (id, nombre) => ({
+  type: types.ADD_CATEGORIA,
+  payload: {
+    id,
+    nombre,
+  },
+});
+
+export const removeCategoria = id => ({
+  type: types.DELETE_CATEGORIA,
+  payload: { id },
+});
+
 
 //acciones de usuario
 export const addUser = (id, first_name, last_name, email, password, username) => ({

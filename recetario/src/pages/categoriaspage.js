@@ -1,4 +1,6 @@
 import React from 'react';
+import CategoriaApp from '../components/CategoriaApp';
+
 
 import {NavLink} from 'react-router-dom';
 const Navigation = (props)=> <nav>
@@ -20,5 +22,6 @@ export default function Categoriapage(props){
   return <div>
     <h2>Categorias</h2>
     <Navigation />
+    <CategoriaApp />
     </div>
 }
