@@ -58,8 +58,27 @@ export function* login(action){
       const token = result.token;
       localStorage.setItem('jwtToken', token);
       console.log("inicio sesion"); 
-      
+      window.location.href = "http://localhost:3000/start";
     }
     yield put(stopSubmit('loginUserForm', errors));
   
 }
+
+/*
+//crear recetas
+export function* crearReceta(action){
+    yield put(startSubmit('createRecipeForm'));
+    let errors = {};
+    const {titulo, ingredientes, descripcion, user_id } = action.payload;
+    const newUser = yield call(postData, `${API_URL}/recetas/`, {titulo, ingredientes, descripcion, user_id});
+    if(Object.keys(newUser).length === 1){
+     yield put({type: 'REQUEST_FAILED', errors: newUser.username});
+      errors = newUser.username;
+      alert(newUser.username)
+    }else{ 
+      alert("¡creación exitosa!")
+      yield put(reset('createRecipeForm'));
+    }
+    yield put(stopSubmit('createRecipeForm', errors));
+}
+*/
